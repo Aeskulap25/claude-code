@@ -6,11 +6,12 @@
 <style>
   @page { size: A4; margin: 0; }
   :root{
-    --c: #0b6e7a;        /* Leitfarbe Petrol */
-    --c-light: #e3f1f2;
+    --c: #8a6162;        /* Leitfarbe (Praxis-CI, abgedunkeltes Rosé) */
+    --sage: #bcd5b2;
+    --c-light: #f5eeee;
     --ink: #1b1b1b;
     --muted: #555;
-    --line: #9bb9bd;
+    --line: #c9b3b3;
   }
   *{ box-sizing: border-box; }
   html,body{ margin:0; padding:0; background:#fff; color:var(--ink);
@@ -18,6 +19,11 @@
   .page{ width:210mm; height:297mm; padding:9mm 11mm 13mm 11mm; position:relative; overflow:hidden; page-break-after:always; }
   .page:last-child{ page-break-after:auto; }
 
+  /* Briefkopf */
+  .letterhead{ display:flex; justify-content:space-between; align-items:flex-end; padding-bottom:2mm; margin-bottom:2mm; border-bottom:.6mm solid var(--sage); }
+  .letterhead img{ height:13mm; }
+  .letterhead .addr{ text-align:right; font-size:7pt; line-height:1.35; color:#575756; }
+  .letterhead .addr b{ color:var(--c); font-size:7.6pt; }
   /* Kopf */
   .band{ display:flex; justify-content:space-between; align-items:center; background:var(--c); color:#fff;
     padding:1.6mm 3mm; font-size:7.6pt; letter-spacing:.04em; text-transform:uppercase; font-weight:bold; }
@@ -31,7 +37,7 @@
   .stamp{ height:17mm; }
 
   /* Text */
-  .cols{ column-count:2; column-gap:6mm; column-rule:0.2mm solid #d6e3e4; margin-top:3mm; }
+  .cols{ column-count:2; column-gap:6mm; column-rule:0.2mm solid #e6dcdc; margin-top:3mm; }
   h2{ font-size:9.6pt; color:#fff; background:var(--c); padding:.9mm 2mm; margin:2.6mm 0 1.4mm; break-after:avoid; }
   h2:first-child{ margin-top:0; }
   h3{ font-size:8.8pt; color:var(--c); margin:2mm 0 .6mm; break-after:avoid; }
@@ -44,7 +50,7 @@
   .warn b.t{ color:#b3261e; }
   table.risk{ width:100%; border-collapse:collapse; font-size:7.5pt; margin:1mm 0 1.2mm; break-inside:avoid; }
   table.risk th{ background:var(--c-light); color:var(--c); text-align:left; padding:.8mm 1.2mm; border-bottom:.3mm solid var(--c); }
-  table.risk td{ padding:.7mm 1.2mm; border-bottom:.2mm solid #cfdcdd; vertical-align:top; }
+  table.risk td{ padding:.7mm 1.2mm; border-bottom:.2mm solid #e6dcdc; vertical-align:top; }
   table.risk td.n{ text-align:right; white-space:nowrap; font-weight:bold; }
   .small{ font-size:7pt; color:var(--muted); }
 
@@ -52,11 +58,11 @@
   .withmargin{ display:grid; grid-template-columns: 1fr 34mm; gap:4mm; }
   .margin{ border-left:0.3mm dashed var(--line); padding-left:2.5mm; margin-top:3mm; }
   .margin .lab{ font-size:6.6pt; color:var(--c); font-weight:bold; text-transform:uppercase; letter-spacing:.03em; margin-bottom:1mm; }
-  .margin .ln{ border-bottom:0.2mm solid #d0dfe0; height:6.2mm; }
+  .margin .ln{ border-bottom:0.2mm solid #e6dcdc; height:6.2mm; }
 
   /* Fragebogen */
   table.q{ width:100%; border-collapse:collapse; font-size:7.9pt; }
-  table.q td{ padding:1mm 1.2mm; border-bottom:.2mm solid #d6e3e4; vertical-align:top; }
+  table.q td{ padding:1mm 1.2mm; border-bottom:.2mm solid #e6dcdc; vertical-align:top; }
   table.q td.nr{ width:5mm; color:var(--c); font-weight:bold; }
   table.q td.yn{ width:18mm; white-space:nowrap; text-align:right; }
   .cb{ display:inline-block; width:2.9mm; height:2.9mm; border:.25mm solid #333; vertical-align:-0.4mm; margin:0 .6mm 0 1.6mm; }
@@ -70,13 +76,17 @@
   .consent h2{ margin:-2.4mm -3mm 2mm; }
 
   .foot{ position:absolute; left:11mm; right:11mm; bottom:5mm; display:flex; justify-content:space-between;
-    font-size:6.4pt; color:var(--muted); border-top:.2mm solid #cfdcdd; padding-top:1mm; }
+    font-size:6.4pt; color:var(--muted); border-top:.2mm solid #e6dcdc; padding-top:1mm; }
 </style>
 </head>
 <body>
 
 <!-- ============================ SEITE 1 ============================ -->
 <section class="page">
+  <div class="letterhead">
+    <img src="logo-dr-reif.svg" alt="Dr. Philipp Reif · Frauenheilkunde &amp; Geburtshilfe · Graz">
+    <div class="addr"><b>Priv.-Doz. Dr. Philipp Reif</b><br>Ordination für Frauenheilkunde und Geburtshilfe<br>Schererstraße 6 · 8052 Graz · T +43 316 57 20 30<br>ordination@dr-reif.at · www.dr-reif.at</div>
+  </div>
   <div class="band"><span>Gynäkologie · Gynäkologische Endokrinologie</span><span>Patientinneninformation &amp; Einwilligung</span></div>
 
   <div class="head">
@@ -90,9 +100,7 @@
       <div class="field">Name, Vorname</div>
       <div class="field">Geburtsdatum</div>
       <div class="lab" style="margin-top:2mm">Aufklärender Arzt</div>
-      <div style="font-size:8.6pt;color:#1b1b1b;font-weight:bold;margin:.8mm 0 1.2mm">PD Dr. Philipp Reif</div>
-      <div class="lab">Praxis / Klinik</div>
-      <div class="stamp" style="height:11mm"></div>
+      <div style="font-size:8.6pt;color:#1b1b1b;font-weight:bold;margin:.8mm 0 0">Priv.-Doz. Dr. Philipp Reif</div>
     </div>
   </div>
 
@@ -102,7 +110,7 @@
     Sie leiden unter Beschwerden der Wechseljahre und haben sich gemeinsam mit Ihrer Ärztin/Ihrem Arzt über eine Hormontherapie informiert. Dieser Bogen erklärt Ihnen, wie die Behandlung wirkt und abläuft, welchen Nutzen sie haben kann und welche Risiken und Nebenwirkungen möglich sind. Er ersetzt nicht das persönliche Gespräch, sondern bereitet es vor.</p>
 
     <h2>Was geschieht in den Wechseljahren?</h2>
-    <p>Etwa zwischen dem 45. und 55. Lebensjahr stellen die Eierstöcke ihre Hormonproduktion schrittweise ein. Die letzte Regelblutung (Menopause) liegt in Deutschland im Mittel um das 51. Lebensjahr. Der sinkende Östrogenspiegel kann zu typischen Beschwerden führen:</p>
+    <p>Etwa zwischen dem 45. und 55. Lebensjahr stellen die Eierstöcke ihre Hormonproduktion schrittweise ein. Die letzte Regelblutung (Menopause) liegt im Mittel um das 51. Lebensjahr. Der sinkende Östrogenspiegel kann zu typischen Beschwerden führen:</p>
     <ul>
       <li><b>Hitzewallungen und Schweißausbrüche</b> (auch nachts), dadurch oft Schlafstörungen und Erschöpfung,</li>
       <li>Stimmungsschwankungen, Reizbarkeit, Konzentrationsprobleme, Gelenk- und Muskelbeschwerden,</li>
@@ -162,7 +170,7 @@
 
     <h2>Ablauf der Behandlung</h2>
     <h3>1. Vor Beginn</h3>
-    <p>Im Gespräch erheben wir Ihre Beschwerden, Vorerkrankungen, Medikamente sowie Ihr persönliches und familiäres Risiko (v. a. Thrombosen, Herzinfarkt, Schlaganfall, Brust-, Gebärmutter- und Eierstockkrebs). Es folgen eine gynäkologische Untersuchung einschließlich Tastuntersuchung der Brust, Blutdruck- und Gewichtsmessung sowie ggf. Ultraschall. Die Diagnose „Wechseljahre“ wird bei Frauen über 45 Jahren in der Regel anhand der Beschwerden und des Zyklusverlaufs gestellt; Hormonbestimmungen im Blut sind meist <b>nicht</b> nötig. Je nach Alter sollten Krebsfrüherkennung und Mammographie-Screening (50–75 Jahre) aktuell sein. Risikofaktoren wie Bluthochdruck, Diabetes oder erhöhte Blutfette sollten vorher gut eingestellt sein.</p>
+    <p>Im Gespräch erheben wir Ihre Beschwerden, Vorerkrankungen, Medikamente sowie Ihr persönliches und familiäres Risiko (v. a. Thrombosen, Herzinfarkt, Schlaganfall, Brust-, Gebärmutter- und Eierstockkrebs). Es folgen eine gynäkologische Untersuchung einschließlich Tastuntersuchung der Brust, Blutdruck- und Gewichtsmessung sowie ggf. Ultraschall. Die Diagnose „Wechseljahre“ wird bei Frauen über 45 Jahren in der Regel anhand der Beschwerden und des Zyklusverlaufs gestellt; Hormonbestimmungen im Blut sind meist <b>nicht</b> nötig. Krebsabstrich und – im Rahmen des österreichischen Brustkrebs-Früherkennungsprogramms (ab 45 Jahren alle 2 Jahre) – die Mammographie sollten aktuell sein. Risikofaktoren wie Bluthochdruck, Diabetes oder erhöhte Blutfette sollten vorher gut eingestellt sein.</p>
     <h3>2. Auswahl und Beginn</h3>
     <p>Gemeinsam wählen wir Präparat, Dosis und Anwendungsform passend zu Ihren Beschwerden, Ihrem Risikoprofil und Ihren Wünschen. Begonnen wird mit der niedrigsten wirksamen Dosis. Die Wirkung auf Hitzewallungen setzt meist nach 2–4 Wochen ein, die volle Wirkung oft erst nach etwa 3 Monaten.</p>
     <h3>3. Kontrollen</h3>
@@ -239,7 +247,7 @@
       <li>Gel/Spray auf die empfohlenen Hautstellen (nicht auf die Brust) auftragen; Hautkontakt mit Kindern und Haustieren an der Auftragsstelle bis zum Eintrocknen vermeiden.</li>
       <li>Die MHT schützt nicht vor einer Schwangerschaft. Solange noch Regelblutungen auftreten, ist ggf. eine Verhütung nötig – sprechen Sie uns an.</li>
       <li>Informieren Sie andere behandelnde Ärzte über die MHT, insbesondere vor Operationen oder längerer Bettlägerigkeit/Ruhigstellung (Thromboserisiko).</li>
-      <li>Nehmen Sie die Krebsfrüherkennung und das Mammographie-Screening wahr und tasten Sie Ihre Brust regelmäßig ab.</li>
+      <li>Nehmen Sie die gynäkologische Vorsorge und die Mammographie im Rahmen der Brustkrebs-Früherkennung wahr und tasten Sie Ihre Brust regelmäßig ab.</li>
     </ul>
     <div class="warn"><b class="t">Bitte sofort ärztliche Hilfe suchen bei:</b> schmerzhafter Schwellung eines Beins, plötzlicher Atemnot oder Brustschmerz, plötzlichen Lähmungen, Sprach- oder Sehstörungen, sehr starken ungewohnten Kopfschmerzen, Gelbfärbung der Haut/Augen. <b>Zeitnah vorstellen</b> bei: neu getastetem Knoten in der Brust, ungewöhnlichen oder anhaltenden Blutungen (v. a. nach monatelanger Blutungsfreiheit), deutlichem Blutdruckanstieg.</div>
   </div>
@@ -268,7 +276,7 @@
     <tr><td class="nr">9</td><td>Rauchen Sie? &nbsp; Falls ja, wie viel: <span class="blank" style="width:35mm">&nbsp;</span></td><td class="yn">nein<span class="cb"></span> ja<span class="cb"></span></td></tr>
     <tr><td class="nr">10</td><td>Nehmen Sie regelmäßig Medikamente oder Nahrungsergänzungsmittel ein (auch pflanzliche Präparate, Blutverdünner, Antiepileptika, Johanniskraut)?<span class="sub-line"></span></td><td class="yn">nein<span class="cb"></span> ja<span class="cb"></span></td></tr>
     <tr><td class="nr">11</td><td>Sind Allergien oder Unverträglichkeiten (z. B. gegen Pflaster, Erdnuss/Soja) bekannt?<span class="sub-line"></span></td><td class="yn">nein<span class="cb"></span> ja<span class="cb"></span></td></tr>
-    <tr><td class="nr">12</td><td>Wann waren Ihre letzte Krebsfrüherkennung und (ab 50 J.) Ihre letzte Mammographie? <span class="sub-line"></span></td><td class="yn"></td></tr>
+    <tr><td class="nr">12</td><td>Wann waren Ihre letzte Krebsfrüherkennung und (ab 45 J.) Ihre letzte Mammographie? <span class="sub-line"></span></td><td class="yn"></td></tr>
   </table>
 
   <div class="consent" style="margin-top:3mm">
@@ -279,7 +287,7 @@
 
   <div class="consent">
     <h2>Einwilligung</h2>
-    <p style="text-align:left">Ich habe den Aufklärungsbogen gelesen und verstanden. Im Aufklärungsgespräch mit <b>PD Dr. Philipp Reif</b> wurde ich über Zweck, Ablauf, Nutzen, Risiken, Nebenwirkungen und Alternativen der menopausalen Hormontherapie umfassend informiert. Alle meine Fragen wurden verständlich beantwortet. Ich hatte ausreichend Bedenkzeit. Mir ist bekannt, dass ich meine Einwilligung jederzeit widerrufen und die Therapie beenden kann. Eine Kopie dieses Bogens habe ich erhalten.</p>
+    <p style="text-align:left">Ich habe den Aufklärungsbogen gelesen und verstanden. Im Aufklärungsgespräch mit <b>Priv.-Doz. Dr. Philipp Reif</b> wurde ich über Zweck, Ablauf, Nutzen, Risiken, Nebenwirkungen und Alternativen der menopausalen Hormontherapie umfassend informiert. Alle meine Fragen wurden verständlich beantwortet. Ich hatte ausreichend Bedenkzeit. Mir ist bekannt, dass ich meine Einwilligung jederzeit widerrufen und die Therapie beenden kann. Eine Kopie dieses Bogens habe ich erhalten.</p>
     <p style="margin-top:1.4mm"><span class="cb" style="margin-left:0"></span> <b>Ich willige in die vorgeschlagene Hormontherapie ein.</b></p>
     <p><span class="cb" style="margin-left:0"></span> <b>Ich lehne die Hormontherapie ab.</b> Über mögliche Nachteile (z. B. Fortbestehen der Beschwerden, Knochenschwund) wurde ich aufgeklärt.</p>
     <div class="sig">
@@ -288,7 +296,7 @@
     </div>
     <div class="sig" style="margin-top:8mm">
       <div>Ort, Datum</div>
-      <div>Unterschrift PD Dr. Philipp Reif</div>
+      <div>Unterschrift Priv.-Doz. Dr. Philipp Reif</div>
     </div>
   </div>
 
