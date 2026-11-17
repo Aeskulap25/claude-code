@@ -7,7 +7,7 @@
   /* Gliederung nach Vorlage „Aufklärungsbogen Hormonelle Empfängnisverhütung“.
      Alle Gestaltungselemente sind zusätzlich über Linienart, Linienstärke und
      Grauwert unterscheidbar – Farbe ist nie das einzige Merkmal (SW-Druck). */
-  @page { size: A4; margin: 11mm 13mm 14mm 13mm; }
+  @page { size: A4; margin: 10mm 12mm 13mm 12mm; }
   :root{
     --c: #6f4a4b;      /* Rosé, dunkel – druckt als dunkles Grau */
     --sage: #9cbb90;   /* Salbei – druckt als mittleres Grau */
@@ -17,59 +17,56 @@
   }
   *{ box-sizing:border-box; }
   html,body{ margin:0; background:#fff; color:var(--ink);
-    font-family:"Liberation Sans", Arial, Helvetica, sans-serif; font-size:8.6pt; line-height:1.34;
+    font-family:"Liberation Sans", Arial, Helvetica, sans-serif; font-size:8.3pt; line-height:1.31;
     -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  p{ margin:0 0 1.5mm; text-align:justify; hyphens:auto; }
+  p{ margin:0 0 1.3mm; text-align:justify; hyphens:auto; }
 
-  /* Briefkopf */
-  .letterhead{ display:flex; justify-content:space-between; align-items:flex-end; padding-bottom:1.6mm; border-bottom:.5mm solid var(--sage); }
-  .letterhead img{ height:12mm; }
-  .letterhead .addr{ text-align:right; font-size:7pt; line-height:1.35; color:#333; }
+  .letterhead{ display:flex; justify-content:space-between; align-items:flex-end; padding-bottom:1.4mm; border-bottom:.5mm solid var(--sage); }
+  .letterhead img{ height:11mm; }
+  .letterhead .addr{ text-align:right; font-size:6.9pt; line-height:1.33; color:#333; }
 
-  /* Titelblock (wie Vorlage: Titel · Datum/Arzt · Fachgebiet) */
-  h1{ font-size:16pt; line-height:1.15; margin:3mm 0 .8mm; color:var(--c); }
-  .byline{ font-size:7.8pt; color:var(--muted); margin-bottom:.6mm; }
-  .kicker{ font-weight:bold; font-size:8.4pt; letter-spacing:.02em; margin-bottom:2mm; }
+  h1{ font-size:15pt; line-height:1.15; margin:2.4mm 0 .6mm; color:var(--c); }
+  .byline{ font-size:7.6pt; color:var(--muted); margin-bottom:.4mm; }
+  .kicker{ font-weight:bold; font-size:8.2pt; letter-spacing:.02em; margin-bottom:1.6mm; }
 
-  /* Überschriften – in SW über Form unterscheidbar:
-     H2 = dicke Linie oben + Großbuchstaben; H3 = linker Balken + fett */
-  h2{ font-size:10pt; text-transform:uppercase; letter-spacing:.05em; color:var(--c);
-      border-top:.8mm solid var(--c); padding-top:1mm; margin:3.4mm 0 1.6mm; break-after:avoid; }
-  h3{ font-size:9pt; margin:2.4mm 0 .8mm; padding-left:2mm; border-left:1.1mm solid var(--sage); break-after:avoid; }
+  /* H2 = dicke Linie oben + Großbuchstaben; H3 = linker Balken */
+  h2{ font-size:9.6pt; text-transform:uppercase; letter-spacing:.05em; color:var(--c);
+      border-top:.8mm solid var(--c); padding-top:.9mm; margin:2.8mm 0 1.3mm; break-after:avoid; }
+  h3{ font-size:8.8pt; margin:2mm 0 .7mm; padding-left:2mm; border-left:1.1mm solid var(--sage); break-after:avoid; }
   .lab{ font-weight:bold; }
 
-  ul{ margin:0 0 1.6mm; padding-left:4.5mm; }
-  li{ margin-bottom:.6mm; text-align:justify; hyphens:auto; }
-  ul.warnlist{ list-style:none; padding-left:0; }
+  ul{ margin:0 0 1.4mm; padding-left:4.5mm; }
+  li{ margin-bottom:.5mm; text-align:justify; hyphens:auto; }
+  ul.warnlist{ list-style:none; padding-left:0; margin-bottom:.8mm; }
   ul.warnlist li::before{ content:"▶ "; font-size:7pt; }
 
-  /* Tabellen: durchgehende Linien, hellgrauer Kopf */
-  table{ width:100%; border-collapse:collapse; margin:1mm 0 2mm; break-inside:avoid; }
-  th, td{ border:.25mm solid #555; padding:.9mm 1.4mm; vertical-align:top; text-align:left; }
+  table{ width:100%; border-collapse:collapse; margin:.8mm 0 1.6mm; break-inside:avoid; }
+  th, td{ border:.25mm solid #555; padding:.75mm 1.3mm; vertical-align:top; text-align:left; }
   th{ background:var(--g1); font-weight:bold; }
   td.n{ text-align:right; white-space:nowrap; }
-  .src{ font-size:7pt; color:var(--muted); margin-top:-1mm; }
+  .src{ font-size:7pt; color:var(--muted); margin-top:-.8mm; }
 
-  table.headtab td{ height:6.6mm; }
+  table.headtab td{ height:6mm; }
   table.headtab td.doc{ width:44%; }
-  .fieldlab{ font-size:7.2pt; color:var(--muted); }
+  .fieldlab{ font-size:7.1pt; color:var(--muted); }
 
-  /* Kästen – SW-unterscheidbar:
-     Wichtig = hellgrau gefüllt + gestrichelter Rahmen; Warnung = doppelter Rahmen + Symbol */
-  .info{ background:var(--g1); border:.3mm dashed #333; padding:1.6mm 2.2mm; margin:1.6mm 0 2mm; break-inside:avoid; }
-  .warn{ border:1mm double #000; padding:1.8mm 2.4mm; margin:2mm 0; break-inside:avoid; }
+  /* Wichtig = grau gefüllt + gestrichelt; Warnung = doppelter Rahmen + Symbol */
+  .info{ background:var(--g1); border:.3mm dashed #333; padding:1.4mm 2mm; margin:1.4mm 0 1.6mm; break-inside:avoid; }
+  .warn{ border:1mm double #000; padding:1.6mm 2.2mm; margin:1.8mm 0; break-inside:avoid; }
   .warn h3{ border-left:none; padding-left:0; margin-top:0; }
   .warn h3::before{ content:"⚠ "; }
+  .warn .sub{ font-weight:bold; margin:.6mm 0 .2mm; }
 
-  table.q td.cb, table.q th.cb{ width:9mm; text-align:center; }
+  table.q td.cb, table.q th.cb{ width:8mm; text-align:center; }
   .box{ display:inline-block; width:3mm; height:3mm; border:.3mm solid #000; vertical-align:-.5mm; }
   .blank{ display:inline-block; border-bottom:.25mm dotted #000; min-width:30mm; }
-  .line{ border-bottom:.25mm solid #000; height:6.4mm; }
+  .line{ border-bottom:.25mm solid #000; height:6mm; }
   .hint{ font-style:italic; color:var(--muted); }
-  table.sig td{ height:13mm; }
+  table.sig td{ height:12mm; }
+  .choice, .fill{ text-align:left; }
   .choice > span{ margin-right:5mm; white-space:nowrap; }
-  .small{ font-size:7.2pt; color:var(--muted); }
-  ul.src-list{ font-size:7.4pt; }
+  .small{ font-size:7pt; color:var(--muted); }
+  ul.src-list{ font-size:7.1pt; }
   .avoid{ break-inside:avoid; }
 </style>
 </head>
@@ -81,7 +78,7 @@
 </div>
 
 <h1>Aufklärungsbogen Menopausale Hormontherapie (MHT)</h1>
-<div class="byline">Stand: 16.11.2026 · Priv.-Doz. Dr. Philipp Reif</div>
+<div class="byline">Stand: 17.11.2026 · Priv.-Doz. Dr. Philipp Reif</div>
 <div class="kicker">Gynäkologie · Patientinnen-Information und Einwilligung</div>
 
 <table class="headtab">
@@ -96,60 +93,60 @@
 <p>Sie leiden unter Beschwerden der Wechseljahre und möchten eine Hormontherapie beginnen. Dieser Bogen erklärt Ihnen Zweck, Ablauf, Nutzen und Risiken der Behandlung. Er dient der Vorbereitung auf das Aufklärungsgespräch und ersetzt dieses nicht. Bitte lesen Sie ihn sorgfältig, beantworten Sie die Fragen im Fragebogen und notieren Sie sich alles, was Sie noch wissen möchten.</p>
 
 <h2>Was geschieht in den Wechseljahren?</h2>
-<p>Etwa zwischen dem 45. und 55. Lebensjahr stellen die Eierstöcke ihre Hormonproduktion schrittweise ein; die letzte Regelblutung (Menopause) liegt im Mittel um das 51. Lebensjahr. Der sinkende und stark schwankende Hormonspiegel kann zu <b>Hitzewallungen und Schweißausbrüchen</b>, Schlafstörungen, Stimmungsschwankungen, Konzentrationsproblemen, Gelenkbeschwerden, <b>Scheidentrockenheit</b>, Beschwerden beim Geschlechtsverkehr und wiederkehrenden Blasenentzündungen führen. Langfristig beschleunigt sich der Knochenabbau (Osteoporose). Die Wechseljahre sind keine Krankheit – eine Behandlung ist sinnvoll, wenn die Beschwerden Ihre Lebensqualität spürbar beeinträchtigen.</p>
+<p>Der Übergang in die Wechseljahre beginnt oft schon ab etwa 40 Jahren und kann sich über viele Jahre erstrecken; die letzte Regelblutung (Menopause) liegt im Mittel um das 51. Lebensjahr. Typisch sind <b>Hitzewallungen und Schweißausbrüche</b>, Schlafstörungen und Stimmungsschwankungen. Häufig kommt es auch zum <b>urogenitalen Menopausensyndrom (GSM)</b>: Trockenheit, Brennen und Schmerzen im Scheiden- und Schambereich, Schmerzen beim Geschlechtsverkehr, Harndrang und wiederkehrende Blasenentzündungen. Langfristig nimmt die Knochendichte ab. Die Wechseljahre sind keine Krankheit – eine Behandlung ist sinnvoll, wenn die Beschwerden Ihre Lebensqualität spürbar beeinträchtigen.</p>
 
 <h2>Wie wirkt die Hormontherapie?</h2>
-<p>Die MHT ersetzt die fehlenden Hormone in möglichst niedriger, aber wirksamer Dosis. Nach der S3-Leitlinie „Peri- und Postmenopause“ und dem aktuellen Konsensuspapier der gynäkologischen Fachgesellschaften Österreichs, Deutschlands und der Schweiz (OEGGG, DGGG, SGGG 2026) ist sie die <b>wirksamste Behandlung von Hitzewallungen und Schweißausbrüchen</b>. Bei <b>vorzeitigen Wechseljahren</b> (vor dem 40. Lebensjahr) oder nach Entfernung der Eierstöcke wird sie mindestens bis zum natürlichen Menopausealter empfohlen.</p>
-<p>Wirksamer Bestandteil ist <b>Estradiol</b>, das dem körpereigenen Hormon entspricht. <b>Frauen mit Gebärmutter</b> benötigen zusätzlich ein <b>Gestagen</b>, das die Gebärmutterschleimhaut schützt; Frauen ohne Gebärmutter erhalten Östrogen allein.</p>
+<p>Die MHT ersetzt die fehlenden Hormone in möglichst niedriger, aber wirksamer Dosis. Sie ist die <b>wirksamste Behandlung von Hitzewallungen und Schweißausbrüchen</b> und soll Frauen mit belastenden Beschwerden nach Aufklärung angeboten werden, wenn keine Gegenanzeigen bestehen. Wirksamer Bestandteil ist <b>Estradiol</b>. <b>Frauen mit Gebärmutter</b> benötigen zusätzlich ein <b>Gestagen</b>, das die Gebärmutterschleimhaut schützt; Frauen ohne Gebärmutter erhalten Östrogen allein.</p>
+<p><b>Vorzeitige Wechseljahre</b> sind gesondert zu betrachten: Bei einer vorzeitigen Ovarialinsuffizienz (POI, vor dem 40. Lebensjahr) ersetzt die Hormongabe die fehlende Eigenproduktion und wird – unabhängig von Beschwerden – bis zum durchschnittlichen Menopausealter (50–52 Jahre) empfohlen, um Knochen, Herz und Gefäße zu schützen. Bei einer frühen Menopause (vor 45 Jahren) besprechen wir das Vorgehen individuell.</p>
 
 <table>
   <tr><th>Behandlungsform</th><th>Hormone</th><th>Anwendung</th><th>Besonderheit</th></tr>
-  <tr><td>Östrogen als Tablette</td><td>Estradiol</td><td>täglich</td><td>gleichwertig bei niedrigem Thromboserisiko</td></tr>
-  <tr><td>Östrogen über die Haut (Pflaster, Gel, Spray)</td><td>Estradiol</td><td>täglich bzw. Pflaster 1–2×/Woche</td><td>kein relevant erhöhtes Thromboserisiko</td></tr>
+  <tr><td>Östrogen als Tablette</td><td>Estradiol</td><td>täglich</td><td>bei niedrigem Thromboserisiko gleichwertig</td></tr>
+  <tr><td>Östrogen über die Haut (Pflaster, Gel, Spray)</td><td>Estradiol</td><td>täglich bzw. Pflaster 1–2×/Woche</td><td>geringeres Thrombose- und Schlaganfallrisiko als Tablette</td></tr>
   <tr><td>Gestagen-Schutz</td><td>Progesteron, Dydrogesteron, Hormonspirale</td><td>12–14 Tage/Monat oder täglich</td><td>nur bei vorhandener Gebärmutter</td></tr>
   <tr><td>Kombinationspräparat</td><td>Estradiol + Gestagen</td><td>täglich (Tablette/Pflaster)</td><td>ein Präparat für beides</td></tr>
-  <tr><td>Vaginale Behandlung</td><td>Estriol oder Estradiol, niedrig dosiert</td><td>Creme, Zäpfchen, Ring</td><td>wirkt örtlich, kein Gestagen nötig</td></tr>
+  <tr><td>Vaginale Behandlung</td><td>Estriol oder Estradiol, niedrig dosiert</td><td>Creme, Zäpfchen, Ring</td><td>wirkt örtlich, oft längerfristig</td></tr>
 </table>
 
-<div class="info"><b>Wichtig:</b> Die MHT ist <b>kein Verhütungsmittel</b>. Sie ist auch nicht dazu bestimmt, Herzkrankheiten, Demenz oder Krebs vorzubeugen. Individuell hergestellte, als „bioidentisch“ beworbene Hormonmischungen sind behördlich nicht geprüft und werden nicht empfohlen – zugelassene Präparate mit Estradiol und Progesteron sind bereits körperidentisch.</div>
+<div class="info"><b>Wichtig:</b> Die MHT ist <b>kein Verhütungsmittel</b>. Sie wird <b>nicht</b> zur Vorbeugung von Herz-Kreislauf-Erkrankungen, Demenz oder Krebs eingesetzt. Zugelassene Präparate mit Estradiol und Progesteron sind körperidentisch; individuell hergestellte, als „bioidentisch“ beworbene Mischungen sind behördlich nicht geprüft und werden nicht empfohlen.</div>
 
 <h2>Die Behandlung im Einzelnen</h2>
-<p>Vor dem Beginn fragen wir nach Ihren Beschwerden, Vorerkrankungen, Medikamenten und der Krankengeschichte Ihrer Familie (v. a. Thrombosen, Herzinfarkt, Schlaganfall, Brust- und Eierstockkrebs, BRCA). Es folgen eine gynäkologische Untersuchung mit Krebsabstrich (PAP) und vaginalem Ultraschall der Gebärmutterschleimhaut, Tastuntersuchung der Brust sowie Blutdruck- und Gewichtsmessung. Vor Beginn sollte eine aktuelle <b>Mammographie</b> vorliegen; die Brustdichte fließt in die Entscheidung ein. Ab 45 Jahren wird die Diagnose anhand von Beschwerden und Zyklusverlauf gestellt – Hormonwerte im Blut oder Speicheltests sind dafür <b>nicht</b> nötig. Bei erhöhtem Herz-Kreislauf-Risiko veranlassen wir vorab eine internistische Abklärung; ein Gerinnungstest ist nur bei eigener oder familiärer Vorbelastung sinnvoll.</p>
+<p>Vor Beginn fragen wir nach Beschwerden, Vorerkrankungen, Medikamenten und der Krankengeschichte Ihrer Familie (Thrombosen, Herzinfarkt, Schlaganfall, Krebserkrankungen, BRCA) sowie nach Ihren <b>Schwangerschaften</b> (z. B. Schwangerschaftsdiabetes, Präeklampsie, Bluthochdruck), da diese das Herz-Kreislauf-Risiko beeinflussen. Empfohlen sind eine gynäkologische Untersuchung mit Krebsabstrich (PAP) und vaginalem Ultraschall, eine Brustuntersuchung, Blutdruck- und Gewichtsmessung sowie eine aktuelle <b>Mammographie</b>; die Brustdichte fließt in die Entscheidung ein. Was im regulären Vorsorgeintervall bereits erfolgt ist, muss nicht wiederholt werden. Hormonwerte im Blut sind meist nicht nötig – sinnvoll sind sie z. B., wenn kein Blutungsmuster beurteilbar ist (nach Gebärmutterentfernung, mit Hormonspirale) oder bei Verdacht auf vorzeitige Wechseljahre. Bei erhöhtem Herz-Kreislauf-Risiko veranlassen wir vorab eine internistische Abklärung; ein Gerinnungstest ist nur bei eigener oder familiärer Vorbelastung sinnvoll.</p>
 
 <h3>Östrogen als Tablette</h3>
-<p><span class="lab">Ablauf:</span> Sie nehmen täglich eine Tablette ein, meist ohne Pause. <span class="lab">Vorteile:</span> Einfache Anwendung, gut dosierbar. <span class="lab">Nachteile:</span> Durch den Weg über die Leber ist das Risiko für Thrombose und Schlaganfall höher als bei Anwendung über die Haut. Bei niedrigem Risiko ist die Tablette eine gleichwertige Option.</p>
+<p><span class="lab">Ablauf:</span> Täglich eine Tablette, meist ohne Pause. <span class="lab">Vorteile:</span> Einfache Anwendung, gut dosierbar. <span class="lab">Nachteile:</span> Durch den Weg über die Leber ist das Risiko für Thrombose und Schlaganfall höher als bei Anwendung über die Haut. Bei niedrigem Risiko ist die Tablette eine gleichwertige Option.</p>
 
 <h3>Östrogen über die Haut (Pflaster, Gel, Spray)</h3>
-<p><span class="lab">Ablauf:</span> Gel oder Spray täglich auf Arm, Oberschenkel oder unteren Rücken auftragen (nicht auf die Brust); Pflaster 1–2× pro Woche wechseln. <span class="lab">Vorteile:</span> Umgeht die Leber, daher kein relevant erhöhtes Thromboserisiko und geringeres Schlaganfallrisiko. Wird oft bevorzugt – bei Risikofaktoren wie Übergewicht, Bluthochdruck, Diabetes, erhöhten Blutfetten, Rauchen oder früherer Thrombose ausdrücklich. <span class="lab">Nachteile:</span> Hautreizung; bei Neurodermitis oder Allergien mögliche Verschlechterung; die Aufnahme ist von Frau zu Frau unterschiedlich.</p>
+<p><span class="lab">Ablauf:</span> Gel oder Spray täglich auf Arm, Oberschenkel oder unteren Rücken (nicht auf die Brust); Pflaster 1–2× pro Woche wechseln. <span class="lab">Vorteile:</span> Umgeht den ersten Leberdurchgang. Im Vergleich zur Tablette ist das Risiko für Thrombosen und wahrscheinlich auch für Schlaganfälle geringer; bei üblicher Dosierung ist bisher kein relevanter Anstieg des Thromboserisikos nachgewiesen. Eine reguläre erste Wahl – bei Übergewicht, Bluthochdruck, Diabetes, erhöhten Blutfetten oder Rauchen bevorzugt. Auch hier werden individuelle Risikofaktoren und die Dosis berücksichtigt. <span class="lab">Nachteile:</span> Hautreizung, bei Neurodermitis mögliche Verschlechterung; die Aufnahme ist individuell unterschiedlich.</p>
 
 <h3>Gestagen-Schutz der Gebärmutterschleimhaut</h3>
-<p><span class="lab">Ablauf:</span> Bevorzugt werden <b>mikronisiertes Progesteron</b> oder <b>Dydrogesteron</b>, entweder <b>zyklisch</b> an 12–14 Tagen pro Monat (mit regelmäßiger Abbruchblutung) oder <b>kontinuierlich</b> täglich (meist ohne Blutung, anfangs häufig Schmierblutungen). Auch eine Hormonspirale ist möglich. Progesteron-Kapseln werden meist abends eingenommen oder vaginal angewendet. <span class="lab">Vorteile:</span> Verhindert die durch Östrogen allein ausgelöste Wucherung der Schleimhaut; Progesteron und Dydrogesteron sind u. a. hinsichtlich des Brustkrebsrisikos günstiger als ältere Gestagene; orales Progesteron kann den Schlaf verbessern. <span class="lab">Nachteile:</span> Müdigkeit, Schwindel, Kopfschmerzen oder Stimmungsschwankungen möglich; Blutungen bei zyklischer Gabe.</p>
+<p><span class="lab">Ablauf:</span> Meist <b>mikronisiertes Progesteron</b> oder <b>Dydrogesteron</b>, entweder <b>zyklisch</b> an mindestens 12, besser 14 Tagen pro Monat (mit regelmäßiger Abbruchblutung) oder <b>kontinuierlich</b> täglich (meist ohne Blutung). Die Gestagendosis wird an die Östrogendosis angepasst. Auch eine Hormonspirale ist möglich. Progesteron wird meist abends eingenommen oder vaginal angewendet. <span class="lab">Vorteile:</span> Verhindert die durch Östrogen allein ausgelöste Wucherung der Schleimhaut. Progesteron und Dydrogesteron scheinen hinsichtlich Brustkrebs- und Gefäßrisiko günstiger zu sein als manche älteren Gestagene – ein fehlendes Risiko ist damit aber nicht belegt. Orales Progesteron kann den Schlaf verbessern. <span class="lab">Nachteile:</span> Müdigkeit, Schwindel, Kopfschmerzen oder Stimmungsschwankungen möglich.</p>
 
 <h3>Vaginale Östrogenbehandlung</h3>
-<p><span class="lab">Ablauf:</span> Niedrig dosierte Creme, Zäpfchen oder Ring, anfangs täglich, dann 2–3× pro Woche. <span class="lab">Vorteile:</span> Sehr wirksam bei Scheidentrockenheit, Schmerzen beim Verkehr, Harndrang und wiederkehrenden Harnwegsinfekten; wirkt fast nur örtlich, ein Gestagen ist nicht nötig; nach heutigem Wissen kein erhöhtes Brustkrebsrisiko. <span class="lab">Nachteile:</span> Wirkt nicht gegen Hitzewallungen; anfangs leichtes Brennen möglich.</p>
+<p><span class="lab">Ablauf:</span> Niedrig dosierte Creme, Zäpfchen oder Ring, anfangs täglich, dann 2–3× pro Woche; die Besserung tritt nach einigen Wochen ein. <span class="lab">Vorteile:</span> Wirksam bei allen Beschwerden des GSM, auch bei Harndrang, Blasenschwäche und wiederkehrenden Harnwegsinfekten; wirkt fast nur örtlich, ein Gestagen ist nicht nötig; bisher keine Hinweise auf ein erhöhtes Brustkrebsrisiko. Da die Beschwerden nach dem Absetzen meist zurückkehren, ist oft eine <b>Langzeitbehandlung</b> sinnvoll. <span class="lab">Nachteile:</span> Wirkt nicht gegen Hitzewallungen; anfangs leichtes Brennen möglich.</p>
 
-<h3>Ablauf, Kontrollen und Dauer</h3>
-<p><span class="lab">Beginn:</span> Mit möglichst niedriger Dosis; bei anhaltenden Beschwerden schrittweise Erhöhung, bei Beschwerdefreiheit Reduktion. Die Wirkung setzt nach 2–4 Wochen ein, die volle Wirkung oft nach 3 Monaten. <span class="lab">Kontrollen:</span> Spätestens nach 3 Monaten, dann bei stabiler Einstellung alle 6–12 Monate mit gynäkologischer Untersuchung (ggf. inkl. Ultraschall), in der Perimenopause oft häufiger. Einmal jährlich prüfen wir, ob die Therapie noch nötig ist und sich Ihr Risikoprofil verändert hat; nach 3–5 Jahren wird die Indikation grundsätzlich neu bewertet. Die Mammographie erfolgt weiter im Rahmen der Brustkrebs-Früherkennung. <span class="lab">Dauer und Absetzen:</span> Es gibt keine feste Höchstdauer. Die Therapie kann ausgeschlichen oder sofort beendet werden; Ausschleichen mildert ein kurzfristiges Wiederaufflammen der Beschwerden.</p>
+<h3>Ablauf, Blutungen, Kontrollen und Dauer</h3>
+<p><span class="lab">Beginn:</span> Mit möglichst niedriger Dosis, bei Bedarf schrittweise Anpassung. Hitzewallungen bessern sich bei systemischer Therapie meist nach 2–4 Wochen, die volle Wirkung zeigt sich oft nach 3 Monaten. <span class="lab">Blutungen:</span> Bei zyklischer Therapie sind regelmäßige Abbruchblutungen zu erwarten, bei kontinuierlicher Therapie anfangs Schmierblutungen. Neu auftretende, starke, anhaltende oder nach längerer Blutungsfreiheit auftretende Blutungen müssen abgeklärt werden. <span class="lab">Kontrollen:</span> Spätestens nach 3 Monaten, dann bei stabiler Einstellung alle 6–12 Monate; einmal jährlich prüfen wir, ob die Therapie noch nötig ist und sich Ihr Risiko verändert hat, nach 3–5 Jahren wird die Indikation grundsätzlich neu bewertet. <span class="lab">Dauer:</span> Keine feste Höchstdauer. Die Therapie kann ausgeschlichen oder sofort beendet werden.</p>
 
 <h3>Alternativen</h3>
-<p>Hormonfreie Medikamente gegen Hitzewallungen (<b>Fezolinetant, Elinzanetant</b>; bei Fezolinetant anfangs Leberwert-Kontrollen), kognitive Verhaltenstherapie, klinische Hypnose, Traubensilberkerze, bestimmte Antidepressiva (hierfür nicht zugelassen); bei Scheidentrockenheit Gleit- und Feuchtigkeitsgele; zum Knochenschutz Bewegung, Kalzium, Vitamin D und spezielle Osteoporose-Medikamente. Sie können auch abwarten – häufige Hitzewallungen dauern im Mittel etwa 7 Jahre.</p>
+<p><b>Fezolinetant</b> und <b>Elinzanetant</b> sind hormonfreie Medikamente gegen Hitzewallungen; Elinzanetant kann auch den Schlaf verbessern. Bei Fezolinetant sind in den ersten 3 Monaten monatliche Leberwertkontrollen nötig; es ist bei Lebererkrankungen und zusammen mit bestimmten Medikamenten (CYP1A2-Hemmer) nicht geeignet. Weitere Optionen: kognitive Verhaltenstherapie, klinische Hypnose, Traubensilberkerze, Isoflavone, bestimmte Antidepressiva (nicht erste Wahl). Bei GSM: Gleit- und Feuchtigkeitsgele. Bei ausgeprägtem Libidoverlust kann nach Abklärung eine Testosteronbehandlung erwogen werden (für Frauen nicht zugelassen). Knochenschutz: Bewegung, ausreichende Kalzium- und Vitamin-D-Versorgung, ggf. Osteoporose-Medikamente. Sie können auch abwarten – häufige Hitzewallungen dauern im Mittel etwa 7 Jahre.</p>
 
 <h2>Welchen Nutzen hat die MHT?</h2>
 <ul>
-  <li><b>Wechseljahresbeschwerden:</b> Hitzewallungen und Schweißausbrüche gehen deutlich zurück; häufig bessern sich Schlaf, Stimmung, Konzentration und Gelenkbeschwerden – und damit die Lebensqualität.</li>
+  <li><b>Wechseljahresbeschwerden:</b> Hitzewallungen und Schweißausbrüche gehen deutlich zurück; häufig bessern sich auch Schlaf und damit verbundene Beschwerden. Die Wirkung auf Stimmung, Konzentration und Gelenkbeschwerden ist individuell unterschiedlich.</li>
   <li><b>Knochen:</b> Die MHT erhält die Knochendichte und senkt das Bruchrisiko deutlich (Hüfte um ca. 28 %, Wirbelkörper um ca. 35 %). Nach dem Absetzen geht dieser Schutz innerhalb einiger Jahre verloren.</li>
-  <li><b>Darm und Stoffwechsel:</b> Darmkrebs tritt unter kombinierter MHT seltener auf; der Beginn eines Typ-2-Diabetes kann sich verzögern.</li>
-  <li><b>Herz und Gefäße:</b> Beginnt die MHT im „Zeitfenster“ – in der Perimenopause bzw. bis 10 Jahre nach der Menopause –, kann sie sich günstig auf Herz und Gefäße auswirken. Ein späterer Beginn ist mit einem höheren Risiko verbunden; dann nur nach sorgfältiger Abwägung und in niedriger Dosis.</li>
+  <li><b>Herz und Gefäße:</b> Bei gesunden Frauen mit Beschwerden unter 60 Jahren bzw. innerhalb von 10 Jahren nach der Menopause ist das Nutzen-Risiko-Verhältnis günstiger als bei späterem Beginn. Zur Vorbeugung von Herz-Kreislauf-Erkrankungen wird die MHT jedoch nicht empfohlen.</li>
 </ul>
+<p class="small">Ergänzend: In Studien traten Darmkrebs (unter kombinierter MHT) und Typ-2-Diabetes seltener auf; die Daten sind jedoch nicht eindeutig, und beides ist kein Grund für eine MHT.</p>
 
 <h2>Mögliche Risiken und Nebenwirkungen</h2>
-<p>Die meisten Frauen vertragen die MHT gut. Für gesunde Frauen, die vor dem 60. Lebensjahr bzw. innerhalb von 10 Jahren nach der Menopause beginnen, überwiegt bei belastenden Beschwerden in der Regel der Nutzen. Die Risiken sind hier aufgeführt, damit Sie gut entscheiden und Warnzeichen rechtzeitig erkennen können.</p>
+<p>Die meisten Frauen vertragen die MHT gut. Für gesunde Frauen, die vor dem 60. Lebensjahr bzw. innerhalb von 10 Jahren nach der Menopause beginnen, überwiegt bei belastenden Beschwerden in der Regel der Nutzen.</p>
 
 <h3>Häufige, meist harmlose Beschwerden</h3>
-<p>Vor allem in den ersten Monaten: Brustspannen, Zwischen- und Schmierblutungen, Kopfschmerzen, Übelkeit, Wassereinlagerungen, Stimmungsschwankungen, Hautreizung bei Pflaster/Gel. Viele Beschwerden lassen nach einigen Monaten nach oder bessern sich durch Anpassung von Dosis oder Präparat. Eine nennenswerte Gewichtszunahme ist durch die MHT nicht belegt.</p>
+<p>Vor allem in den ersten Monaten: Brustspannen, Zwischen- und Schmierblutungen, Kopfschmerzen, Übelkeit, Wassereinlagerungen, Stimmungsschwankungen, Veränderungen der Libido, Hautreizung bei Pflaster/Gel. Viele Beschwerden lassen nach einigen Monaten nach oder bessern sich durch Anpassung der Therapie. Eine nennenswerte Gewichtszunahme ist nicht belegt.</p>
 
 <h3>Brustkrebs</h3>
-<p>Das zusätzliche Risiko ist insgesamt <b>gering</b> – Bewegungsmangel, Übergewicht und Alkohol sind mit einem höheren Risiko verbunden. Bei kombinierter Therapie wird eine Erhöhung erst nach etwa 5 Jahren messbar; sie steigt mit der Dauer, ist bei zyklischer Gabe etwas geringer als bei kontinuierlicher und sinkt nach dem Absetzen wieder. Östrogen allein ist mit geringem oder keinem Risiko verbunden.</p>
+<p>Eine systemische MHT kann das Brustkrebsrisiko <b>gering</b> erhöhen. Bei kombinierter Therapie steigt es mit der Dauer – deutlich ab etwa 5 Jahren –, ist bei zyklischer Gabe etwas geringer als bei kontinuierlicher und sinkt nach dem Absetzen wieder. Für Östrogen allein sind die Daten widersprüchlich; eine geringe Erhöhung ist möglich. Für niedrig dosierte vaginale Präparate gibt es bisher keine Hinweise auf ein erhöhtes Risiko. Übergewicht, Bewegungsmangel und Alkohol beeinflussen das Risiko in ähnlicher oder größerer Größenordnung.</p>
 <table>
   <tr><th>Frauen ab 50 Jahren, Beobachtung über 20 Jahre</th><th style="text-align:right">Brustkrebsfälle pro 1.000 Frauen</th></tr>
   <tr><td>Keine Hormontherapie (Grundrisiko)</td><td class="n">ca. 63</td></tr>
@@ -157,70 +154,76 @@
   <tr><td>Östrogen + Gestagen zyklisch, 5 Jahre</td><td class="n">ca. 14 zusätzlich</td></tr>
   <tr><td>Östrogen + Gestagen kontinuierlich, 5 Jahre</td><td class="n">ca. 20 zusätzlich</td></tr>
 </table>
-<p class="src">Bei 10 Jahren Anwendung etwa doppelt so viele zusätzliche Fälle. Quelle: Collaborative Group on Hormonal Factors in Breast Cancer, Lancet 2019 (Addendum zur S3-Leitlinie 2021); Daten überwiegend mit älteren synthetischen Gestagenen.</p>
+<p class="src"><b>Einordnung:</b> Statistische Schätzungen aus großen Studien (Collaborative Group, Lancet 2019), keine individuelle Prognose. Sie beruhen überwiegend auf älteren Präparaten und lassen sich nicht uneingeschränkt auf heutige übertragen; bei längerer Anwendung liegen die Zahlen höher. Das Risiko hängt von Therapieform, Gestagen, Dauer, Alter und Ausgangsrisiko ab.</p>
 
 <h3>Thrombose, Lungenembolie und Schlaganfall</h3>
-<p>Östrogen als Tablette erhöht das Risiko für Blutgerinnsel in den Venen (besonders im ersten Jahr) und leicht das Schlaganfallrisiko. Über die Haut angewendet ist in üblicher Dosis kein relevanter Anstieg nachweisbar; bei höherer Dosis und Risikofaktoren ist trotzdem Vorsicht geboten. Zusätzlich erhöht wird das Risiko vor allem durch frühere Thrombosen, Thrombosen bei nahen Verwandten, Gerinnungsstörungen, Übergewicht, Rauchen, Operationen und längere Bettlägerigkeit.</p>
+<p>Östrogen als Tablette erhöht das Risiko für Blutgerinnsel in den Venen (besonders im ersten Jahr) und leicht für Schlaganfälle; das Risiko ist dosisabhängig und bei Beginn in der frühen Postmenopause niedriger. Bei Anwendung über die Haut ist es deutlich geringer. Zusätzlich erhöht wird es durch frühere Thrombosen, Thrombosen bei nahen Verwandten, Gerinnungsstörungen, Übergewicht, Rauchen, Operationen und Bettlägerigkeit.</p>
 <table>
-  <tr><th>Behandlung (zusätzliche Fälle pro 10.000 Frauen pro Jahr)</th><th style="text-align:right">Thrombose/Embolie</th><th style="text-align:right">Schlaganfall</th></tr>
+  <tr><th>Orientierungswerte aus der WHI-Studie (Frauen im Mittel 63 Jahre): zusätzliche Fälle pro 10.000 Frauen pro Jahr</th><th style="text-align:right">Thrombose/Embolie</th><th style="text-align:right">Schlaganfall</th></tr>
   <tr><td>Östrogen + Gestagen als Tablette</td><td class="n">ca. 21</td><td class="n">ca. 9</td></tr>
   <tr><td>Östrogen allein als Tablette</td><td class="n">ca. 11</td><td class="n">ca. 11</td></tr>
-  <tr><td>Östrogen über die Haut (bis 50 µg/Tag)</td><td class="n">kein relevanter Anstieg</td><td class="n">kein Anstieg</td></tr>
+  <tr><td>Östrogen über die Haut, übliche Dosis (bis 50 µg/Tag)</td><td class="n">bisher kein relevanter Anstieg nachgewiesen</td><td class="n">kein Anstieg nachgewiesen</td></tr>
 </table>
-<p class="src">Quelle: S3-Leitlinie 015-062 (2020) nach WHI-Studie (Frauen im Mittel 63 Jahre); bei jüngeren Frauen ist das absolute Risiko niedriger.</p>
+<p class="src">Bei jüngeren, gesunden Frauen sind die absoluten Risiken deutlich niedriger; maßgeblich sind Alter, Vorerkrankungen und individuelle Risikofaktoren.</p>
 
-<h3>Weitere Krebsrisiken</h3>
-<p><span class="lab">Gebärmutterkrebs:</span> Östrogen allein erhöht bei vorhandener Gebärmutter das Risiko stark; ein ausreichend dosiertes Gestagen hebt dies auf – lassen Sie es daher nie eigenmächtig weg. <span class="lab">Eierstockkrebs:</span> Für bestimmte Formen ist eine minimale Zunahme möglich; wegen der Seltenheit ist dies kein entscheidender Faktor. <span class="lab">Darmkrebs:</span> eher seltener (siehe Nutzen).</p>
-
-<h3>Weitere Risiken</h3>
-<p><span class="lab">Gallensteine</span> treten unter Tabletten etwas häufiger auf. <span class="lab">Demenz:</span> Ob eine MHT vor dem 65. Lebensjahr das Risiko beeinflusst, ist unklar; ein Beginn nach 65 war in Studien mit einem erhöhten Risiko verbunden. <span class="lab">Blasenschwäche</span> bessert sich durch eine systemische MHT nicht; hier hilft eher vaginales Östrogen.</p>
+<h3>Weitere Krebsrisiken und Risiken</h3>
+<p><span class="lab">Gebärmutterkrebs:</span> Östrogen allein erhöht bei vorhandener Gebärmutter das Risiko stark; ein ausreichend dosiertes Gestagen verhindert dies weitgehend – lassen Sie es nie eigenmächtig weg. Bei mikronisiertem Progesteron und Dydrogesteron ist nach mehr als 5 Jahren ein gering erhöhtes Risiko möglich. <span class="lab">Eierstockkrebs:</span> etwa 1 zusätzlicher Fall pro 1.000 Anwenderinnen über 5 Jahre. <span class="lab">Gallensteine</span> treten unter Tabletten etwas häufiger auf. <span class="lab">Demenz:</span> Eine MHT wird nicht zur Vorbeugung einer Demenz empfohlen; ein erstmaliger Beginn im höheren Lebensalter war in Studien mit einem erhöhten Risiko verbunden. <span class="lab">Blasenschwäche</span> bessert sich durch eine systemische MHT nicht; hier hilft eher vaginales Östrogen.</p>
 
 <div class="warn">
-  <h3>Sofort ärztlichen Rat einholen bei</h3>
+  <h3>Warnzeichen</h3>
+  <div class="sub">Sofort Notruf 144 bei:</div>
+  <ul class="warnlist">
+    <li>plötzlicher Atemnot, Brustschmerzen, Bluthusten</li>
+    <li>plötzlichen Lähmungen, Taubheit, Seh- oder Sprechstörungen, plötzlichen sehr starken Kopfschmerzen</li>
+  </ul>
+  <div class="sub">Umgehend ärztlich abklären bei:</div>
   <ul class="warnlist">
     <li>Schmerzen oder Schwellung in einem Bein, besonders in der Wade</li>
-    <li>plötzlicher Atemnot, Brustschmerzen, Bluthusten</li>
-    <li>plötzlichen Lähmungen, Taubheit, Seh- oder Sprechstörungen, ungewohnt starken Kopfschmerzen</li>
-    <li>starken Oberbauchschmerzen, Gelbfärbung von Haut oder Augen</li>
-    <li>einem neu getasteten Knoten in der Brust (zeitnah)</li>
-    <li>ungewöhnlichen oder anhaltenden Blutungen, v. a. nach monatelanger Blutungsfreiheit (zeitnah)</li>
+    <li>Gelbfärbung von Haut oder Augen, dunklem Urin, starken Oberbauchschmerzen</li>
+  </ul>
+  <div class="sub">Zeitnah vorstellen bei:</div>
+  <ul class="warnlist">
+    <li>einem neu getasteten Knoten oder anderen Veränderungen der Brust</li>
+    <li>neu auftretenden, starken, anhaltenden Blutungen oder Blutungen nach längerer Blutungsfreiheit</li>
   </ul>
 </div>
 
 <h2>Worauf Sie achten sollten</h2>
 <ul>
-  <li><b>Regelmäßige Anwendung:</b> Wenden Sie die Präparate genau nach Anweisung an – vor allem das Gestagen. Verkürzen Sie die Gestagentage nicht.</li>
+  <li><b>Regelmäßige Anwendung:</b> Wenden Sie die Präparate genau nach Anweisung an – vor allem das Gestagen; verkürzen Sie die Gestagentage nicht.</li>
   <li><b>Gel und Spray:</b> Nicht auf die Brust auftragen; bis zum Eintrocknen Hautkontakt mit Kindern und Haustieren vermeiden.</li>
-  <li><b>Verhütung:</b> Die MHT schützt nicht vor einer Schwangerschaft; solange noch Blutungen auftreten, ggf. zusätzlich verhüten.</li>
-  <li><b>Operationen und lange Ruhigstellung:</b> Teilen Sie vor geplanten Operationen oder bei Gipsverband mit, dass Sie eine MHT anwenden.</li>
-  <li><b>Lange Flugreisen:</b> Viel trinken, Beine bewegen, ggf. Kompressionsstrümpfe.</li>
+  <li><b>Verhütung:</b> In der Perimenopause ist eine Schwangerschaft weiterhin möglich. Die MHT schützt nicht davor – ggf. ist eine geeignete Verhütung nötig.</li>
+  <li><b>Operationen, Ruhigstellung, Reisen:</b> Informieren Sie behandelnde Ärztinnen und Ärzte vor größeren Operationen, längerer Immobilisation und langen Reisen über Ihre MHT; ggf. ist eine Thromboseprophylaxe nötig.</li>
   <li><b>Lebensstil:</b> Bewegung, Normalgewicht, Rauchverzicht und wenig Alkohol verbessern die Wirkung und senken Risiken.</li>
-  <li><b>Kontrollen:</b> Halten Sie die Kontrolltermine ein, nehmen Sie Krebsabstrich und Mammographie wahr und tasten Sie Ihre Brust regelmäßig ab.</li>
+  <li><b>Kontrollen:</b> Halten Sie Kontrolltermine, Krebsabstrich und Mammographie ein und lassen Sie Veränderungen der Brust abklären.</li>
 </ul>
 
-<p><b>Wann darf die MHT nicht angewendet werden?</b> Eine systemische MHT u. a. bei hormonabhängigen Tumoren (z. B. bestehender oder früherer Brustkrebs), nicht abgeklärten Blutungen, unbehandelter Wucherung der Gebärmutterschleimhaut, schwerwiegenden Gerinnungsstörungen bzw. früherer Thrombose oder Lungenembolie (Tablettenform), Herzinfarkt oder Schlaganfall, akuter Lebererkrankung, Porphyrie und Schwangerschaft. Bei angeborener Gerinnungsneigung, Autoimmunerkrankungen oder nach Gebärmutterkrebs wird individuell entschieden. Ein gut eingestellter Bluthochdruck oder Diabetes ist dagegen <b>kein</b> Hinderungsgrund.</p>
+<p><b>Wann ist eine systemische MHT nicht oder nur nach besonderer Abklärung möglich?</b> In der Regel <b>nicht</b> angezeigt ist sie bei bestehendem oder früherem Brustkrebs und anderen hormonabhängigen Tumoren, ungeklärten Blutungen, unbehandelter Wucherung der Gebärmutterschleimhaut, nach Thrombose, Lungenembolie, Herzinfarkt oder Schlaganfall (auch bei Anwendung über die Haut), bei akuter Lebererkrankung, Porphyrie und Schwangerschaft. Eine <b>individuelle fachärztliche Abwägung</b> ist nötig bei bekannter Gerinnungsneigung, Migräne mit Aura, bestimmten Autoimmunerkrankungen, Leber- oder Gallenerkrankungen sowie nach Gebärmutter-, Eierstock- oder anderen Krebserkrankungen. Ein gut eingestellter Bluthochdruck oder Diabetes ist für sich allein kein Hinderungsgrund. Die niedrig dosierte <b>vaginale</b> Behandlung wird gesondert beurteilt und kommt teils auch dann infrage, wenn eine systemische MHT nicht möglich ist.</p>
 
 <h2>Fragebogen (bitte ankreuzen)</h2>
 <table class="q">
   <tr><th>Frage</th><th class="cb">nein</th><th class="cb">ja</th></tr>
-  <tr><td>Wann war Ihre letzte Regelblutung? <span class="blank">&nbsp;</span> Wurde Ihre Gebärmutter entfernt?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Letzte Regelblutung: <span class="blank">&nbsp;</span> Wurde Ihre Gebärmutter entfernt?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
   <tr><td>Hatten Sie nach der Menopause oder außerhalb der Regel ungeklärte Blutungen?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
-  <tr><td>Haben oder hatten Sie Brustkrebs, Gebärmutter- oder Eierstockkrebs oder eine andere Krebserkrankung?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
-  <tr><td>Gab es bei Blutsverwandten Brust- oder Eierstockkrebs oder ist eine BRCA-Genveränderung bekannt?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
-  <tr><td>Hatten Sie selbst schon eine Thrombose, Lungenembolie, einen Herzinfarkt, Schlaganfall oder eine TIA?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
-  <tr><td>Hatten Eltern oder Geschwister vor dem 60. Lebensjahr eine Thrombose, Embolie, einen Herzinfarkt oder Schlaganfall? Ist eine Gerinnungsstörung bekannt?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
-  <tr><td>Haben Sie Bluthochdruck, Diabetes, erhöhte Blutfette oder Migräne mit Aura?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Haben oder hatten Sie Brust-, Gebärmutter-, Eierstock- oder eine andere Krebserkrankung?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Gab es bei Blutsverwandten Brust-, Eierstock- oder Darmkrebs, ist eine BRCA-Mutation oder ein erbliches Tumorsyndrom bekannt?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Hatten Sie selbst eine Thrombose, Lungenembolie, einen Herzinfarkt, Schlaganfall oder eine TIA? Besteht eine koronare Herzkrankheit oder Durchblutungsstörung der Beine (pAVK)?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Hatten Blutsverwandte eine Thrombose, Embolie, einen Herzinfarkt oder Schlaganfall? Wer, in welchem Alter? <span class="blank" style="min-width:40mm">&nbsp;</span> Ist eine Gerinnungsstörung bekannt?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Haben Sie Bluthochdruck, Diabetes oder erhöhte Blutfette?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Haben Sie Migräne mit Aura (Seh-, Gefühls- oder Sprachstörungen vor dem Kopfschmerz)?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Hatten Sie in einer Schwangerschaft eine Präeklampsie, Bluthochdruck oder Schwangerschaftsdiabetes?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
   <tr><td>Haben oder hatten Sie eine Leber- oder Gallenerkrankung, Endometriose, Myome oder eine Autoimmunerkrankung?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Haben oder hatten Sie eine Depression oder andere psychische Erkrankung?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
   <tr><td>Rauchen Sie? Wenn ja, wie viele Zigaretten pro Tag? <span class="blank" style="min-width:18mm">&nbsp;</span></td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
   <tr><td>Ist eine Operation oder längere Ruhigstellung geplant?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
-  <tr><td>Nehmen Sie regelmäßig Medikamente oder pflanzliche Mittel (z. B. Johanniskraut)? Welche? <span class="blank">&nbsp;</span></td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
-  <tr><td>Haben Sie Allergien (z. B. gegen Pflaster, Erdnuss/Soja) oder Hauterkrankungen (z. B. Neurodermitis)?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Nehmen Sie regelmäßig Medikamente, frühere Hormone oder pflanzliche Mittel (z. B. Johanniskraut)? Welche? <span class="blank">&nbsp;</span></td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
+  <tr><td>Haben Sie Allergien (z. B. Pflaster, Erdnuss/Soja) oder Hauterkrankungen (z. B. Neurodermitis)?</td><td class="cb"><span class="box"></span></td><td class="cb"><span class="box"></span></td></tr>
   <tr><td>Letzter Krebsabstrich (PAP): <span class="blank">&nbsp;</span> &nbsp; Letzte Mammographie: <span class="blank">&nbsp;</span></td><td class="cb"></td><td class="cb"></td></tr>
 </table>
 
 <div class="avoid">
 <h2>Ärztliche Anmerkungen zum Aufklärungsgespräch</h2>
-<p class="hint">(z. B. Indikation, gewähltes Präparat, Applikationsform und Dosis, individuelle Risiken, besprochene Alternativen inkl. hormonfreier Optionen, Kontrolltermin)</p>
+<p class="hint">(z. B. Indikation und Therapieziel, individuelle Risikofaktoren, besprochene Alternativen inkl. hormonfreier Optionen, Kontrolltermin)</p>
 <div class="line"></div><div class="line"></div><div class="line"></div>
 </div>
 
@@ -229,8 +232,9 @@
 <p>Ich habe diesen Aufklärungsbogen gelesen und verstanden. Im Gespräch mit <b>Priv.-Doz. Dr. Philipp Reif</b> wurde ich über Zweck, Ablauf, Nutzen, Risiken und Nebenwirkungen der menopausalen Hormontherapie sowie über Alternativen ausführlich informiert. Alle meine Fragen wurden beantwortet. Ich hatte ausreichend Bedenkzeit. Mir ist bekannt, dass ich meine Einwilligung jederzeit widerrufen kann. Eine Kopie dieses Bogens habe ich erhalten.</p>
 <p>Ich willige in die folgende Behandlung ein:</p>
 <p class="choice"><span><span class="box"></span> Östrogen + Gestagen</span><span><span class="box"></span> Östrogen allein</span><span><span class="box"></span> vaginale Östrogenbehandlung</span><br>
-<span><span class="box"></span> Tablette</span><span><span class="box"></span> Pflaster</span><span><span class="box"></span> Gel / Spray</span><span><span class="box"></span> Hormonspirale</span></p>
-<p>Präparat(e): <span class="blank" style="min-width:90mm">&nbsp;</span></p>
+<span><span class="box"></span> Tablette</span><span><span class="box"></span> Pflaster</span><span><span class="box"></span> Gel / Spray</span> &nbsp;·&nbsp; Gestagen: <span><span class="box"></span> zyklisch</span><span><span class="box"></span> kontinuierlich</span><span><span class="box"></span> Hormonspirale</span></p>
+<p class="fill">Östrogen – Präparat / Dosis: <span class="blank" style="min-width:120mm">&nbsp;</span></p>
+<p class="fill">Gestagen – Präparat / Dosis: <span class="blank" style="min-width:120mm">&nbsp;</span></p>
 <p><span class="box"></span> Ich lehne eine Hormontherapie ab. Über mögliche Nachteile (z. B. Fortbestehen der Beschwerden, Knochenschwund) wurde ich aufgeklärt.</p>
 <table class="sig">
   <tr><th>Ort, Datum, Uhrzeit</th><th>Unterschrift Patientin</th><th>Unterschrift Priv.-Doz. Dr. Philipp Reif</th></tr>
@@ -241,8 +245,9 @@
 <h2>Quellen</h2>
 <ul class="src-list">
   <li>Toth B, Ott J, Gruber DM, Naumann G, Weidlinger S, Schaudig K: Peri- und Postmenopause: aktuelle diagnostische und therapeutische Aspekte für die DACH-Region. Konsensuspapier der OEGGG, DGGG und SGGG. Wien Klin Wochenschr 2026;138(Suppl 15):S871–S891, doi:10.1007/s00508-026-02832-7.</li>
-  <li>DGGG, OEGGG, SGGG: S3-Leitlinie <i>Peri- und Postmenopause – Diagnostik und Interventionen</i>, AWMF-Reg.-Nr. 015-062, 2020, mit Addendum 2021 (Arch Gynecol Obstet 2020;302:763–777 und 2021;303:1377–1378). Eine Neufassung befindet sich 2026 im Konsultationsverfahren; Stand vor Verwendung prüfen.</li>
-  <li>Collaborative Group on Hormonal Factors in Breast Cancer: Lancet 2019;394:1159–1168.</li>
+  <li>DGGG, OEGGG, SGGG: S3-Leitlinie <i>Peri- und Postmenopause – Diagnostik und Therapie</i>, AWMF-Reg.-Nr. 015-062, <b>Konsultationsfassung (Entwurf) 2026</b> – noch nicht verabschiedet; nach Veröffentlichung der Endfassung abgleichen.</li>
+  <li>DGGG, OEGGG, SGGG: S3-Leitlinie <i>Peri- und Postmenopause – Diagnostik und Interventionen</i>, AWMF-Reg.-Nr. 015-062, 2020, mit Addendum 2021 (bisher verabschiedete Fassung).</li>
+  <li>Collaborative Group on Hormonal Factors in Breast Cancer: Lancet 2019;394:1159–1168. · Rote-Hand-Brief Fezolinetant (Leberschädigung), 13.01.2025.</li>
 </ul>
 <p class="small">Dieser Bogen ist ein Entwurf und vor dem Einsatz ärztlich und juristisch zu prüfen. Er ersetzt nicht das persönliche Aufklärungsgespräch.</p>
 
