@@ -25,7 +25,7 @@
   .letterhead img{ height:11mm; }
   .letterhead .addr{ text-align:right; font-size:6.9pt; line-height:1.33; color:#333; }
 
-  h1{ font-size:15pt; line-height:1.15; margin:2.4mm 0 .6mm; color:var(--c); }
+  h1{ font-size:15pt; line-height:1.15; margin:0 0 .6mm; color:var(--c); }
   .byline{ font-size:7.6pt; color:var(--muted); margin-bottom:.4mm; }
   .kicker{ font-weight:bold; font-size:8.2pt; letter-spacing:.02em; margin-bottom:1.6mm; }
 
@@ -46,7 +46,9 @@
   td.n{ text-align:right; white-space:nowrap; }
   .src{ font-size:7pt; color:var(--muted); margin-top:-.8mm; }
 
-  table.headtab td{ height:6mm; }
+  table.headtab td{ height:9mm; }
+  table.headtab td.praxis img{ height:10mm; display:block; margin-bottom:.8mm; }
+  table.headtab td.praxis .addr{ font-size:6.8pt; line-height:1.3; color:#333; }
   table.headtab th, table.headtab td{ width:50%; }
   .fieldlab{ font-size:7.1pt; color:var(--muted); }
 
@@ -72,21 +74,15 @@
 </head>
 <body>
 
-<div class="letterhead">
-  <img src="logo-dr-reif.svg" alt="Dr. Philipp Reif · Frauenheilkunde &amp; Geburtshilfe · Graz">
-  <div class="addr"><b>Priv.-Doz. Dr. Philipp Reif</b><br>Ordination für Frauenheilkunde und Geburtshilfe<br>Schererstraße 6 · 8052 Graz · T +43 316 57 20 30<br>ordination@dr-reif.at · www.dr-reif.at</div>
-</div>
 
 <h1>Aufklärungsbogen Menopausale Hormontherapie (MHT)</h1>
 <div class="byline">Stand: 17.11.2026 · Priv.-Doz. Dr. Philipp Reif</div>
 <div class="kicker">Gynäkologie · Patientinnen-Information und Einwilligung</div>
 
 <table class="headtab">
-  <tr><th>Praxis / Klinik (Stempel)</th><th>Patientin</th></tr>
-  <tr><td></td><td>Name, Vorname:</td></tr>
-  <tr><td></td><td>Geburtsdatum:</td></tr>
-  <tr><td></td><td>Gewicht / Größe / Blutdruck:</td></tr>
-  <tr><td></td><td>Geplante Therapie:</td></tr>
+  <tr><th>Praxis / Klinik</th><th>Patientin</th></tr>
+  <tr><td class="praxis" rowspan="2"><img src="logo-dr-reif.svg" alt="Dr. Philipp Reif · Frauenheilkunde &amp; Geburtshilfe · Graz"><div class="addr"><b>Priv.-Doz. Dr. Philipp Reif</b> · Ordination für Frauenheilkunde und Geburtshilfe<br>Schererstraße 6 · 8052 Graz · T +43 316 57 20 30 · ordination@dr-reif.at</div></td><td>Name, Vorname:</td></tr>
+  <tr><td>Geburtsdatum:</td></tr>
 </table>
 
 <p><b>Liebe Patientin,</b></p>
